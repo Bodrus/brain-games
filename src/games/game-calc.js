@@ -4,15 +4,17 @@ const buildQuestion = (firstNamber, secondNamber, operand) => `${firstNamber} ${
 
 const getOperand = () => {
   const counter = getRandom(0, 2);
+  let operand;
   if (counter === 0) {
-    return '+';
+    operand = '+';
   }
   if (counter === 1) {
-    return '-';
+    operand = '-';
   }
   if (counter === 2) {
-    return '*';
+    operand = '*';
   }
+  return operand;
 };
 
 const getResult = (num1, num2, operand) => {
@@ -40,7 +42,7 @@ const getTask = () => {
 };
 
 
-export const getRules = () => console.log('What is the result of the expression?');
+const getRules = () => console.log('What is the result of the expression?');
 const wrongAnswer = name => console.log(`wrong answer. Let's try again, ${name}`);
 
 const begin = () => {
