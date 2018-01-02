@@ -1,31 +1,16 @@
 import { beginGame, getRandom } from '..';
 
+
 const calculatingCommonDivisor = (max, min) => {
   if (max % min === 0) {
-    return `${min}`;
+    return min;
   }
-
-  for (let i = min; i > 1; i -= 1) {
-    if (max % i === 0 && min % i === 0) {
-      return `${i}`;
-    }
-  }
-  return `${1}`;
+  return calculatingCommonDivisor(min, max % min);
 };
 
 const gcd = (a, b) => {
-  let max = a;
-  let min = b;
-
-  if (a < b) {
-    max = b;
-    min = a;
-  }
-  if (a > b) {
-    max = a;
-    min = b;
-  }
-
+  const max = a < b ? b : a;
+  const min = a < b ? a : b;
   return calculatingCommonDivisor(max, min);
 };
 
@@ -39,8 +24,8 @@ const getTask = () => {
 };
 
 
-const getRules = () => console.log('Find the greatest common divisor of given numbers.');
-const wrongAnswer = name => console.log(`wrong answer. Let's try again, ${name}`);
+const getRules = () => 'Find the greatest common divisor of given numbers.';
+const wrongAnswer = name => `wrong answer. Let's try again, ${name}`;
 
 const begin = () => {
   beginGame(getRules, getTask, wrongAnswer);
