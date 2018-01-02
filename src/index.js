@@ -13,7 +13,7 @@ export const start = () => {
 
 export const beginGame = (rules, getTask, wrongAnswer) => {
   welcome();
-  rules();
+  console.log(rules());
   const nameUser = userName();
   console.log(`Hello, ${nameUser}`);
 
@@ -30,7 +30,7 @@ export const beginGame = (rules, getTask, wrongAnswer) => {
     } else if (unswer === unswerUser) {
       console.log('Correct!');
     } else {
-      wrongAnswer(nameUser);
+      console.log(wrongAnswer(nameUser));
       break;
     }
   }

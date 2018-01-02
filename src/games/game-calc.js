@@ -42,8 +42,8 @@ const getTask = () => {
 };
 
 
-const getRules = () => console.log('What is the result of the expression?');
-const wrongAnswer = name => console.log(`wrong answer. Let's try again, ${name}`);
+const getRules = () => 'What is the result of the expression?';
+const wrongAnswer = name => `wrong answer. Let's try again, ${name}`;
 
 const begin = () => {
   beginGame(getRules, getTask, wrongAnswer);
