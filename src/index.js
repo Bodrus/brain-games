@@ -9,6 +9,7 @@ const unsver = () => readlineSync.question('Unswer: ');
 const congratulationsForVictori = name => console.log(`Congratulations, ${name}`);
 const congratulationsForCorrectAnswer = () => console.log('Correct!');
 const gameOver = text => console.log(text);
+const ptintRuls = ruls => console.log(ruls);
 
 
 export const start = () => {
@@ -18,7 +19,7 @@ export const start = () => {
 
 export const beginGame = (rules, getTask, wrongAnswer) => {
   welcome();
-  console.log(rules());
+  ptintRuls(rules());
   const nameUser = userName();
   helloYuser(nameUser);
 
