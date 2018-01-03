@@ -11,11 +11,8 @@ const getTask = () => {
 
 const getRules = () => 'Answer "yes" if number even otherwise answer "no".';
 
-const wrongAnswer = name => `'yes' is wrong answer ;(. Correct answer was 'no'.
-Let's try again, ${name}`;
-
 const begin = () => {
-  beginGame(getRules, getTask, wrongAnswer);
+  beginGame(getRules, getTask);
 };
 
 export default begin;

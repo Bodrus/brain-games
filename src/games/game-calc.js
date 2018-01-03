@@ -41,12 +41,10 @@ const getTask = () => {
   return [question, result];
 };
 
-
 const getRules = () => 'What is the result of the expression?';
-const wrongAnswer = name => `wrong answer. Let's try again, ${name}`;
 
 const begin = () => {
-  beginGame(getRules, getTask, wrongAnswer);
+  beginGame(getRules, getTask);
 };
 
 export default begin;

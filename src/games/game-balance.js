@@ -15,7 +15,6 @@ const duBalance = (num) => {
     }
   }
 
-
   if (Math.abs(Number(maxNum) - Number(minNum)) < 2) {
     const sortNum = Number(arrNum.sort((a, b) => a - b).join(''));
     return sortNum;
@@ -42,12 +41,10 @@ const getTask = () => {
   return [question, result];
 };
 
-
 const getRules = () => 'Balance the given number.';
-const wrongAnswer = name => `wrong answer. Let's try again, ${name}`;
 
 const begin = () => {
-  beginGame(getRules, getTask, wrongAnswer);
+  beginGame(getRules, getTask);
 };
 
 export default begin;

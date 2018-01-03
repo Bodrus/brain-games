@@ -8,8 +8,8 @@ const printQuestion = task => console.log(`Question: ${task}`);
 const unsver = () => readlineSync.question('Unswer: ');
 const congratulationsForVictori = name => console.log(`Congratulations, ${name}`);
 const congratulationsForCorrectAnswer = () => console.log('Correct!');
-const gameOver = text => console.log(text);
 const ptintRuls = ruls => console.log(ruls);
+const wrongAnswer = name => console.log(`Wrond answer, try again ${name}`);
 
 
 export const start = () => {
@@ -17,7 +17,7 @@ export const start = () => {
   helloYuser(userName());
 };
 
-export const beginGame = (rules, getTask, wrongAnswer) => {
+export const beginGame = (rules, getTask) => {
   welcome();
   ptintRuls(rules());
   const nameUser = userName();
@@ -35,7 +35,7 @@ export const beginGame = (rules, getTask, wrongAnswer) => {
     } else if (correctAnswer === unswerUser) {
       congratulationsForCorrectAnswer();
     } else {
-      gameOver(wrongAnswer(nameUser));
+      wrongAnswer(nameUser);
       break;
     }
   }

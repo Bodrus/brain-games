@@ -21,10 +21,9 @@ const getTask = () => {
 };
 
 const getRules = () => 'Find the greatest common divisor of given numbers.';
-const wrongAnswer = name => `wrong answer. Let's try again, ${name}`;
 
 const begin = () => {
-  beginGame(getRules, getTask, wrongAnswer);
+  beginGame(getRules, getTask);
 };
 
 export default begin;
