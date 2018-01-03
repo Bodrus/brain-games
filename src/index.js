@@ -1,36 +1,40 @@
 import readlineSync from 'readline-sync';
 
-export const userName = () => readlineSync.question('May I have your name? ');
 export const getRandom = (min, max) => Math.round((Math.random() * (max - min)) + min);
-export const welcome = () => console.log('Welcome to the Brain Games!');
+const userName = () => readlineSync.question('May I have your name? ');
+const welcome = () => console.log('Welcome to the Brain Games!');
+const helloYuser = name => console.log(`Hi ${name}!`);
+const printQuestion = task => console.log(`Question: ${task}`);
+const unsver = () => readlineSync.question('Unswer: ');
+const congratulationsForVictori = name => console.log(`Congratulations, ${name}`);
+const congratulationsForCorrectAnswer = () => console.log('Correct!');
+const gameOver = text => console.log(text);
 
 
 export const start = () => {
-  console.log('Welcome to the Brain Games!');
-  const PlayerName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${PlayerName}!`);
+  welcome();
+  helloYuser(userName());
 };
 
 export const beginGame = (rules, getTask, wrongAnswer) => {
   welcome();
   console.log(rules());
   const nameUser = userName();
-  console.log(`Hello, ${nameUser}`);
+  helloYuser(nameUser);
 
   for (let i = 0; i < 3; i += 1) {
     const questionAndUnswer = getTask();
-    const question = questionAndUnswer[0];
-    const unswer = questionAndUnswer[1];
+    const correctAnswer = questionAndUnswer[1];
 
-    console.log(`Question: ${question}`);
-    const unswerUser = readlineSync.question('Unswer: ');
+    printQuestion(questionAndUnswer[0]);
+    const unswerUser = unsver();
 
-    if (unswer === unswerUser && i === 2) {
-      console.log(`Congratulations, ${nameUser}`);
-    } else if (unswer === unswerUser) {
-      console.log('Correct!');
+    if (correctAnswer === unswerUser && i === 2) {
+      congratulationsForVictori(nameUser);
+    } else if (correctAnswer === unswerUser) {
+      congratulationsForCorrectAnswer();
     } else {
-      console.log(wrongAnswer(nameUser));
+      gameOver(wrongAnswer(nameUser));
       break;
     }
   }

@@ -1,11 +1,11 @@
 import { beginGame, getRandom } from '..';
 
-const getResult = num => (num % 2 === 0);
+const isEven = num => (num % 2 === 0);
 
 const getTask = () => {
   const randomNamber = getRandom(2, 30);
   const question = `${randomNamber}`;
-  const result = getResult(randomNamber) === true ? 'yes' : 'no';
+  const result = isEven(randomNamber) === true ? 'yes' : 'no';
   return [question, result];
 };
 
