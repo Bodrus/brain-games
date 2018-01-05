@@ -1,7 +1,8 @@
 import { beginGame, getRandom } from '..';
 
 
-const gcd = (arr) => {
+const gcd = (num1, num2) => {
+  const arr = [num1, num2];
   const newArr = arr.sort((a, b) => a - b);
   const max = newArr[1];
   const min = newArr[0];
@@ -13,10 +14,10 @@ const gcd = (arr) => {
 };
 
 const getTask = () => {
-  const firstNamber = getRandom(2, 50);
-  const secondNamber = getRandom(2, 50);
-  const question = `${firstNamber} ${secondNamber}`;
-  const result = gcd([firstNamber, secondNamber]);
+  const firstNumber = getRandom(2, 50);
+  const secondNumber = getRandom(2, 50);
+  const question = `${firstNumber} ${secondNumber}`;
+  const result = gcd(firstNumber, secondNumber);
   return [question, result];
 };
 
