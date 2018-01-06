@@ -21,12 +21,10 @@ const makeTask = () => {
   return [question, corentAnswer];
 };
 
-
 const getTask = () => {
   const task = makeTask();
   return [task[0], `${task[1]}`];
 };
-
 
 const getRules = () => 'What number is missing in this progression?';
 

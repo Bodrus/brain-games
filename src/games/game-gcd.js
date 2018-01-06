@@ -2,15 +2,13 @@ import { beginGame, getRandom } from '..';
 
 
 const gcd = (num1, num2) => {
-  const arr = [num1, num2];
-  const newArr = arr.sort((a, b) => a - b);
-  const max = newArr[1];
-  const min = newArr[0];
+  const max = num1 < num2 ? num2 : num1;
+  const min = num1 < num2 ? num1 : num2;
 
   if (max % min === 0) {
-    return `${min}`;
+    return min;
   }
-  return gcd([min, max % min]);
+  return gcd(min, max % min);
 };
 
 const getTask = () => {
@@ -18,7 +16,7 @@ const getTask = () => {
   const secondNumber = getRandom(2, 50);
   const question = `${firstNumber} ${secondNumber}`;
   const result = gcd(firstNumber, secondNumber);
-  return [question, result];
+  return [question, `${result}`];
 };
 
 const getRules = () => 'Find the greatest common divisor of given numbers.';
