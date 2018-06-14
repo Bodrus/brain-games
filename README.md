@@ -6,6 +6,12 @@
 
 # Brain Game
 
+## About the project
+  The main goal of the project is to familiarize yourself with the setting of the environment, the publication of the npm package and the most important thing is to build the correct application .
+  In the framework of the project it is necessary to implement a set of mini-games that are launched from the console.
+  Each of the games has its own logic, but it has a common functional of the game process itself.
+  This allows you to add (remove) the game module without changing the logic of the overall process
+
 ## Installation Guide
 
 * npm install -g project-lvl1-s216
